@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: date-suggestions
+spec:
+  selector:
+    matchLabels:
+      app: date-suggestions
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: date-suggestions
+    spec:
+      containers:
+        - name: date-suggestions
+          image: date-suggestions
+          ports:
+            - containerPort: 3000

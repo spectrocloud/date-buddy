@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: date-suggestions
+spec:
+  type: LoadBalancer
+  selector:
+    app: date-suggestions
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000

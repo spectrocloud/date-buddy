@@ -2,15 +2,14 @@ import React from 'react';
 
 const SuggestComponent = ({suggestion}) => {
     return (
-        <div className='suggestion-display'>
+        <div className='md:w-1/2 flex items-center  bg-pink-100 rounded m-3 p-8 '>
           {
             suggestion? 
-            <div>
-              <p className='suggestion-text'>{suggestion}</p>
-              <text className='subscription-text'>Subscribe to our pro plan if you'd like a more detailed plan.</text>
+            <div className='flex center mx-auto my-auto'>
+              <p >{suggestion}</p>
             </div> :
-            <div>
-              <p className='eyes'>👈 👀</p>
+            <div className='flex center mx-auto mx-auto my-auto'>
+              <p >👈 👀</p>
             </div>
           }
         </div>

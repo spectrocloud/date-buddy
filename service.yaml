@@ -4,6 +4,8 @@ metadata:
   name: date-suggestions
 spec:
   type: LoadBalancer
+  externalIPs:
+  - 192.168.0.10
   selector:
     app: date-suggestions
   ports:

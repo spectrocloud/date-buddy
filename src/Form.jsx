@@ -1,7 +1,6 @@
 import React from 'react';
 import { DatePicker, Button, Form } from 'antd';
 import {data} from './dataset'
-import SuggestComponent from './SuggestionArea';
 
 
 const DateForm = ({setSuggestion}) => {
@@ -12,6 +11,7 @@ const DateForm = ({setSuggestion}) => {
         };
         const date = new Date(values['date-picker']).getMonth()
         let result= ""
+        // result = data[date]['date-suggestions'][(Math.floor(Math.random() * data[date]['date-suggestions'].length))] 
         switch(date) {
             case 0:
                 result = data[date]['date-suggestions'][(Math.floor(Math.random() * data[date]['date-suggestions'].length))] 
@@ -26,21 +26,20 @@ const DateForm = ({setSuggestion}) => {
 };
 
 return (
-    <div className='date-form'>
-        <section>
-        <text className='greeting-text'>Hello you 👋!</text>
-        <p className='greeting-description'>Let me help you plan your date with your partner(s) </p>
-        </section>
+    <div className='md:w-1/2 m-3 p-8 '>
+        <div>
+            <h3 className='text-xl'>Hello you</h3>
+        </div>
         <Form 
             onFinish={onFinish}
             >
             <Form.Item name="date-picker" id='date-picker' required label = {
-                <p className='select-date-text'>What date is your date 😉?</p>
+                <p className='m-0'>When is your date 😉?</p>
             }> 
-                <DatePicker />
+                <DatePicker className=''/>
             </Form.Item>
             <Form.Item>
-                <Button type="primary" htmlType="submit" style={{'background-color': 'rgb(9, 9, 57)'}} >
+                <Button type="primary" htmlType="submit" className='bg-indigo-950' >
                 Submit
                 </Button>
             </Form.Item>

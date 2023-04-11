@@ -1,6 +1,5 @@
 import DateForm from './Form';
 import SuggestComponent from './SuggestionArea';
-// import './App.css';
 import { useState } from 'react';
 
 function App() {
